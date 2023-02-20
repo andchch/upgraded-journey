@@ -1,0 +1,34 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="kursovaya.MainWindow"
+    mc:Ignorable="d"
+    Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="39*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="SettingsButton" Content="Открыть окно настроек" Margin="10,0,256,275" Visibility="Visible"
+                Click="SettingsButton_Click" Height="25" VerticalAlignment="Bottom" />
+        <Label Content="Сохранить таблицу локально" HorizontalAlignment="Left" Margin="10,10,0,0"
+               VerticalAlignment="Top" />
+        <Label Content="Выберите формат:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="FileFormat" HorizontalAlignment="Left" Margin="127,43,0,0" VerticalAlignment="Top"
+                  Width="120">
+            <System:String>pdf</System:String>
+            <System:String>xlsx</System:String>
+            <System:String>csv</System:String>
+        </ComboBox>
+        <Button x:Name="Download" Content="Сохранить таблицу" HorizontalAlignment="Left" Margin="12,72,0,0"
+                VerticalAlignment="Top" Click="Download_Click" />
+        <Rectangle HorizontalAlignment="Left" Height="89" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top"
+                   Width="240" />
+        <ListBox x:Name="BoardList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="165,10,10,10" Grid.Column="1" />
+        <Button x:Name="GiveBoardButton" Content="Выдать плату" HorizontalAlignment="Left"
+                Margin="10,354,0,0" VerticalAlignment="Top" Click="CheckBoardButton_Click" Width="144" />
+
+    </Grid>
+</Window>
